@@ -1,8 +1,12 @@
-﻿namespace NopCommerce.Tests.UITests;
+﻿using NUnit.Allure.Core;
+
+namespace NopCommerce.Tests.UITests;
+
+[AllureNUnit]
 public class UserStory1 : BaseTest
 {
     [Test]
-    [Property("Test", "1")]
+    [Property("UITest", "1")]
     public void TC_01_AC1()
     {
         Navigator.GoToHomePage()
