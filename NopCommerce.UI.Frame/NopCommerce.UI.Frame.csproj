@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NopCommerce.Core\NopCommerce.Core.csproj" />
+	  <ProjectReference Include="..\NopCommerce.API\NopCommerce.API.csproj" />
+	  <ProjectReference Include="..\NopCommerce.Core\NopCommerce.Core.csproj" />
   </ItemGroup>
 
 </Project>
