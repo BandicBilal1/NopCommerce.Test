@@ -3,9 +3,19 @@ public class UserStory1 : BaseTest
 {
     [Test]
     [Property("Test", "1")]
-    public void TC_01_VerifyThatUserIsAbleToRegisterToTheNopCommerceSite()
+    public void TC_01_AC1()
     {
         Navigator.GoToHomePage()
-            .NavigateToTheRegisterPage();
+            .NavigateToTheRegisterPage()
+            .RegisterToTheNopCommerce()
+            .NavigateToTheGiftCardsPage()
+            .ClickOnWishListButtonForItem()
+            .AddItemToTheWishList()
+            .NavigateToTheWishListPage()
+            .UpdateProductQuantityFor("3")
+            .AddProductToTheCart()
+            .CheckoutTheCart()
+            .ConfirmTheOrder()
+            .VerifyOrderHasBeenProcessed();
     }
 }

@@ -19,4 +19,10 @@ public interface IField : IElement
     /// </summary>
     /// <returns>value as string</returns>
     string GetValue();
+
+    /// <summary>
+    /// Clear text from a field UI element
+    /// </summary>
+    /// <returns>true on successful clear</returns>
+    bool ClearValue();
 }

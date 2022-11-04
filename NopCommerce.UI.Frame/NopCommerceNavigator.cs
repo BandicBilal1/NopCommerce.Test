@@ -1,17 +1,19 @@
-﻿using NopCommerce.Core.Interfaces;
+﻿using NopCommerce.Core;
+using NopCommerce.Core.Interfaces;
 using Pages;
 
 namespace NopCommerce.UI.Frame;
 public class NopCommerceNavigator : BasePage, INavigator
 {
-    public NopCommerceNavigator(IExecutionTool executionTool) : base(executionTool)
+    public NopCommerceNavigator(WebExecutionTool executionTool) : base(executionTool)
     {
 
     }
 
     public HomePage GoToHomePage()
     {
-        ExecutionTool.GoTo(StaticUrls.HomePageUrl);
-        return new HomePage(ExecutionTool);
+        Browser.GoTo(StaticUrls.HomePageUrl);
+
+        return new HomePage(Browser);
     }
 }

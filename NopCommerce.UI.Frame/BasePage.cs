@@ -1,15 +1,17 @@
-﻿using NopCommerce.Core.Interfaces;
+﻿using NopCommerce.Core;
+using NopCommerce.Core.Interfaces;
 
 namespace NopCommerce.UI.Frame;
 public class BasePage
 {
     protected int DefaultExplicitWait = 30;
-    protected readonly IExecutionTool ExecutionTool;
+    protected readonly WebExecutionTool Browser;
+    protected static WebExecutionTool WebExecutionTool => WebExecutionTool.Instance;
 
-    public  BasePage(IExecutionTool executionTool)
+    public  BasePage(WebExecutionTool executionTool)
     {
-        this.ExecutionTool = executionTool;
-        Thread.Sleep(5000);
+        this.Browser = executionTool;
+        Thread.Sleep(1000);
         executionTool.WaitForApplicationIdle();
     }
 }

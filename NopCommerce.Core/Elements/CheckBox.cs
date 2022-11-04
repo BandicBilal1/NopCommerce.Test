@@ -2,19 +2,19 @@
 using OpenQA.Selenium;
 
 namespace NopCommerce.Core.Elements;
-public class Button : IButton
+public class CheckBox : ICheckBox
 {
     public string Id { get; private set; }
 
     private readonly IWebElement _element;
     private static WebExecutionTool WebExecutionTool => WebExecutionTool.Instance;
-    public Button(By by)
+    public CheckBox(By by)
     {
         Id = Guid.NewGuid().ToString();
         _element = WebExecutionTool.GetWebExecutionTool().FindElement(by);
     }
 
-    public Button(IWebElement element)
+    public CheckBox(IWebElement element)
     {
         Id = Guid.NewGuid().ToString();
         _element = element;
@@ -22,15 +22,6 @@ public class Button : IButton
     public bool Click()
     {
         _element.Click();
-
-        return true;
-    }
-
-    public bool ClickJs()
-    {
-        IJavaScriptExecutor jse = (IJavaScriptExecutor) WebExecutionTool.GetWebExecutionTool();
-        jse.ExecuteScript("arguments[0].click();");
-
         return true;
     }
 

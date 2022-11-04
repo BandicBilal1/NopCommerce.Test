@@ -37,4 +37,10 @@ public class Field : IField
         _element.SendKeys(text);
         return true;
     }
+
+    public bool ClearValue()
+    {
+        _element.Clear();
+        return true;
+    }
 }
