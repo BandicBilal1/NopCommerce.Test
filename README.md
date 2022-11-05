@@ -61,3 +61,8 @@ allure generate "allure-results-directory" --clean
 ```shell
 allure open "allure-report-directory"
 ```
+
+### GitHub Actions / CI
+- Go to Actions
+- Click on Run tests
+- Trigger workflow
