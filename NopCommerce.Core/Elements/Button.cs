@@ -26,14 +26,6 @@ public class Button : IButton
         return true;
     }
 
-    public bool ClickJs()
-    {
-        IJavaScriptExecutor jse = (IJavaScriptExecutor) WebExecutionTool.GetWebExecutionTool();
-        jse.ExecuteScript("arguments[0].click();");
-
-        return true;
-    }
-
     public bool Exists(int timeout)
     {
         return _element.Displayed;

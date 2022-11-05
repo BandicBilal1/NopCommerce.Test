@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
-using NopCommerce.UI.Frame.Extensions;
 using NopCommerce.UI.Frame;
 using NopCommerce.UI.Frame.Pages;
 using OpenQA.Selenium;
@@ -22,31 +21,28 @@ public class HomePage : BasePage
     }
     #endregion
 
-    #region General
-
-    internal HomePage WaitForPage()
-    {
-        WebExecutionTool.GetWebExecutionTool().WaitForPageToLoad();
-
-        return new HomePage(Browser);
-    }
-
-    #endregion
-
     #region Actions
 
+    /// <summary>
+    /// Navigate user to the Register page
+    /// </summary>
+    /// <returns></returns>
     public RegisterPage NavigateToTheRegisterPage()
     {
         RegisterLink.Click();
 
-        return new RegisterPage(Browser).WaitForPage();
+        return new RegisterPage(Browser);
     }
 
+    /// <summary>
+    /// Navigate user to the Gift cards page
+    /// </summary>
+    /// <returns></returns>
     public GiftCardsPage NavigateToTheGiftCardsPage()
     {
         GiftCardsLink.Click();
-        
-        return new GiftCardsPage(Browser).WaitForPage();
+
+        return new GiftCardsPage(Browser);
     }
 
     #endregion

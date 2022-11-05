@@ -30,10 +30,6 @@ public sealed class WebExecutionTool : IExecutionTool
         _webDriver.Navigate().GoToUrl(url);
     }
 
-    public void WaitForApplicationIdle()
-    {
-    }
-
     public bool ExitApplication()
     {
         _webDriver.Close();
@@ -103,7 +99,6 @@ public sealed class WebExecutionTool : IExecutionTool
                 ChromeOptions driverOptions = new ChromeOptions();
                 driverOptions.AddArguments("start-maximized");
                 _webDriver = new ChromeDriver((ChromeOptions)driverOptions);
-                //_webDriver.Manage().Window.FullScreen();
                 break;
             case DriverType.Edge:
                 _webDriver = new EdgeDriver();

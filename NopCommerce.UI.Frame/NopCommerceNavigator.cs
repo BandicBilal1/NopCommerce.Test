@@ -10,6 +10,10 @@ public class NopCommerceNavigator : BasePage, INavigator
 
     }
 
+    /// <summary>
+    /// Navigates to Home page of application
+    /// </summary>
+    /// <returns></returns>
     public HomePage GoToHomePage()
     {
         Browser.GoTo(StaticUrls.HomePageUrl);

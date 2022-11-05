@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
-using NopCommerce.UI.Frame.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -27,23 +26,17 @@ public class CheckoutPage : BasePage
 
     public CheckoutPage(WebExecutionTool executionTool) : base(executionTool)
     {
-    }
-
-    #endregion
-
-    #region General
-
-    internal CheckoutPage WaitForPage()
-    {
-        WebExecutionTool.GetWebExecutionTool().WaitForPageToLoad();
-
-        return new CheckoutPage(Browser);
+        this.VerifyCheckoutPageIsDisplayed();
     }
 
     #endregion
 
     #region Actions
 
+    /// <summary>
+    /// Confirms the order od the user after card being checkout
+    /// </summary>
+    /// <returns></returns>
     public CheckoutPage ConfirmTheOrder()
     {
         FillInBillingAddress();
@@ -53,50 +46,70 @@ public class CheckoutPage : BasePage
         ProceedToNextStep();
         ConfirmButton.Click();
 
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
+    /// <summary>
+    /// Fill in user information for Billing address
+    /// </summary>
+    /// <returns></returns>
     private CheckoutPage FillInBillingAddress()
     {
-        SelectElement oSelectElement = new SelectElement(WebExecutionTool.GetWebExecutionTool().FindElement(By.Id("BillingNewAddress_CountryId")));
+        SelectElement oSelectElement = new SelectElement(Browser.GetWebExecutionTool().FindElement(By.Id("BillingNewAddress_CountryId")));
         oSelectElement.SelectByText("Bosnia and Herzegowina");
         CityTextField.Write("Sarajevo");
         Address1TextField.Write("Usivak 76, Hadzici");
         ZipPostalCodeTextField.Write("71240");
         PhoneNumberTextField.Write("062889912");
 
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
+    /// <summary>
+    /// Selects CheckMoneyOrder payment method
+    /// </summary>
+    /// <returns></returns>
     private CheckoutPage SelectPaymentMethod()
     {
         PaymentMethodRadioButton.SelectValue("Payments.CheckMoneyOrder");
 
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
+    /// <summary>
+    /// Proceeds to the next step of order confirmation by clicking Continue button
+    /// </summary>
+    /// <returns></returns>
     private CheckoutPage ProceedToNextStep()
     {
-        ContinueButton.ClickJs();
-        return new CheckoutPage(Browser).WaitForPage();
+        ContinueButton.Click();
+        return new CheckoutPage(Browser);
     }
 
     #endregion
 
     #region Verifications
 
-    public CheckoutPage VerifyCheckoutPageIsDisplayed()
+    /// <summary>
+    /// Verifies that Checkout page is displayed to the user
+    /// </summary>
+    /// <returns></returns>
+    private CheckoutPage VerifyCheckoutPageIsDisplayed()
     {
         CheckoutPageTitle.Exists(5).Should().BeTrue();
 
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
+    /// <summary>
+    /// Verifies that order has been placed by the user
+    /// </summary>
+    /// <returns></returns>
     public CheckoutPage VerifyOrderHasBeenProcessed()
     {
         ConfirmedOrderTitle.Read().Contains("Your order has been successfully processed!");
 
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
     #endregion

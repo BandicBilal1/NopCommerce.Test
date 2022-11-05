@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
-using NopCommerce.UI.Frame.Extensions;
 using OpenQA.Selenium;
 
 namespace NopCommerce.UI.Frame.Pages;
@@ -9,7 +8,6 @@ public class ShoppingCartPage : BasePage
 {
     #region Properties
 
-    private CheckoutPage CheckoutPage = new CheckoutPage(WebExecutionTool);
     private Button CheckoutButton => new(By.Id("checkout"));
     private Label ShoppingCartPageTitle => new(By.XPath("//h1[text()='Shopping cart']"));
     private CheckBox TermsAndServicesBox => new(By.Id("termsofservice"));
@@ -20,42 +18,38 @@ public class ShoppingCartPage : BasePage
 
     public ShoppingCartPage(WebExecutionTool executionTool) : base(executionTool)
     {
-    }
-
-    #endregion
-
-    #region General
-
-    internal ShoppingCartPage WaitForPage()
-    {
-        WebExecutionTool.GetWebExecutionTool().WaitForPageToLoad();
-
-        return new ShoppingCartPage(Browser);
+        this.VerifyShoppingCartPageIsDisplayed();
     }
 
     #endregion
 
     #region Actions
 
+    /// <summary>
+    /// Checkouts the cart by accepting Terms and Services and clicking checkout button
+    /// </summary>
+    /// <returns></returns>
     public CheckoutPage CheckoutTheCart()
     {
         TermsAndServicesBox.Click();
         CheckoutButton.Click();
 
-        CheckoutPage.VerifyCheckoutPageIsDisplayed();
-
-        return new CheckoutPage(Browser).WaitForPage();
+        return new CheckoutPage(Browser);
     }
 
     #endregion
 
     #region Verifications
 
-    public ShoppingCartPage VerifyShoppingCartPageIsDisplayed()
+    /// <summary>
+    /// Verifies user is displayed with Shopping cart page
+    /// </summary>
+    /// <returns></returns>
+    private ShoppingCartPage VerifyShoppingCartPageIsDisplayed()
     {
         ShoppingCartPageTitle.Exists(5).Should().BeTrue();
 
-        return new ShoppingCartPage(Browser).WaitForPage();
+        return new ShoppingCartPage(Browser);
     }
 
     #endregion

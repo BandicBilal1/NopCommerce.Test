@@ -17,6 +17,11 @@ public class RadioButton : IButton
         _elements = WebExecutionTool.GetWebExecutionTool().FindElements(by);
     }
 
+    /// <summary>
+    /// Select Radio button with specified value
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public void SelectValue(string value)
     {
         _elements.Single(_element => _element.GetAttribute("value") == value).Click();

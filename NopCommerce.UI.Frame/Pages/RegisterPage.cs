@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
+using NopCommerce.API.Helpers;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
 using NopCommerce.Core.Interfaces;
-using NopCommerce.UI.Frame.Extensions;
 using OpenQA.Selenium;
 using Pages;
 
@@ -28,40 +28,41 @@ public class RegisterPage : BasePage
 
     #endregion
 
-    #region General
-
-    internal RegisterPage WaitForPage()
-    {
-        WebExecutionTool.GetWebExecutionTool().WaitForPageToLoad();
-
-        return new RegisterPage(Browser);
-    }
-
-    #endregion
-
     #region Actions
 
+    /// <summary>
+    /// Register user in NopCommerce
+    /// </summary>
+    /// <returns></returns>
     public HomePage RegisterToTheNopCommerce()
     {
         FillInRequiredFieldsForRegistration();
         ClickOnTheRegisterButton();
         VerifyThatUserIsRegistered();
 
-        return new HomePage(Browser).WaitForPage();
+        return new HomePage(Browser);
     }
     
+    /// <summary>
+    /// Fill in user data needed for registration
+    /// </summary>
+    /// <returns></returns>
     private RegisterPage FillInRequiredFieldsForRegistration()
     {
         RadioButton.SelectValue("M");
         FirstNameTextField.Write("Bilal");
         LastNameTextField.Write("Bandic");
-        EmailTextField.Write("bandic.bilal.bkkdjjscdjjycd@gmail.com");
+        EmailTextField.Write($"bandic.bilal.{Helper.GenerateRandomString()}@gmail.com");
         PasswordTextField.Write("Capri0123.");
         ConfirmPasswordTextField.Write("Capri0123.");
 
-        return new RegisterPage(Browser).WaitForPage();
+        return new RegisterPage(Browser);
     }
 
+    /// <summary>
+    /// Conclude registration of user by clicking Register button
+    /// </summary>
+    /// <returns></returns>
     private void ClickOnTheRegisterButton()
     {
         RegisterButton.Click();
@@ -71,6 +72,10 @@ public class RegisterPage : BasePage
 
     #region Verifications
 
+    /// <summary>
+    /// Verifies user is registered 
+    /// </summary>
+    /// <returns></returns>
     private HomePage VerifyThatUserIsRegistered()
     {
         var registrationCompletedText = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.CssSelector("div[class='result']"), 5000);
@@ -79,7 +84,7 @@ public class RegisterPage : BasePage
         var continueButton = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.XPath("//a[text()='Continue']"), 5000);
         continueButton.Click();
 
-        return new HomePage(Browser).WaitForPage();
+        return new HomePage(Browser);
     }
 
     #endregion

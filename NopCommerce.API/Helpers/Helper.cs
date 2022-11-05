@@ -7,16 +7,10 @@ public static class Helper
     private static string UserLoginData => "UserData/UserLoginData.json";
     private static string UserCreateData => "UserData/UserDataCreate.json";
 
-
-    public static string GetAuthorizationToken()
-    {
-        var json = Helper.ReadJson(AuthorizationInfo);
-        var tokenJToken = JObject.Parse(json)["token"];
-        var token = tokenJToken.ToString();
-
-        return token;
-    }
-
+    /// <summary>
+    /// Extract user login data from UserLoginData json file
+    /// </summary>
+    /// <returns></returns>
     public static JObject GetUserLoginDataInFormOfBody()
     {
         var json = Helper.ReadJson(UserLoginData);
@@ -25,6 +19,10 @@ public static class Helper
         return jObject;
     }
 
+    /// <summary>
+    /// Extract user data (email, name, location) from UserLoginData json file
+    /// </summary>
+    /// <returns></returns>
     public static JObject GetUserCreateDataInFormOfBody()
     {
         var json = Helper.ReadJson(UserCreateData);
@@ -34,6 +32,11 @@ public static class Helper
         return jObject;
     }
 
+    /// <summary>
+    /// Read json file into string
+    /// </summary>
+    /// <param name="jsonPath"></param>
+    /// <returns></returns>
     private static string ReadJson(string jsonPath)
     {
         StreamReader streamReader = new StreamReader(jsonPath);
@@ -41,7 +44,12 @@ public static class Helper
         return json;
     }
 
-    private static string GenerateRandomString(int lengthOfTheString = 7)
+    /// <summary>
+    /// Generate random string with length based on the parameter
+    /// </summary>
+    /// <param name="lengthOfTheString"></param>
+    /// <returns></returns>
+    public  static string GenerateRandomString(int lengthOfTheString = 7)
     {
         var random = new Random();
         const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

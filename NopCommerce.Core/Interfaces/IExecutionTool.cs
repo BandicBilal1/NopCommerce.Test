@@ -8,11 +8,6 @@ public interface IExecutionTool
     bool StartApplication();
 
     /// <summary>
-    /// Halts execution until application is ready for user input
-    /// </summary>
-    void WaitForApplicationIdle();
-
-    /// <summary>
     /// Goes to specified location e.g. url
     /// </summary>
     /// <param name="location">Location to navigate to</param>

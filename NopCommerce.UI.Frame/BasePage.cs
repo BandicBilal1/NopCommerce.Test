@@ -1,17 +1,27 @@
 ﻿using NopCommerce.Core;
 using NopCommerce.Core.Interfaces;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace NopCommerce.UI.Frame;
 public class BasePage
 {
     protected int DefaultExplicitWait = 30;
-    protected readonly WebExecutionTool Browser;
-    protected static WebExecutionTool WebExecutionTool => WebExecutionTool.Instance;
+    protected WebExecutionTool Browser;
 
     public  BasePage(WebExecutionTool executionTool)
     {
         this.Browser = executionTool;
-        Thread.Sleep(1000);
-        executionTool.WaitForApplicationIdle();
+        this.WaitForPage();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    private void WaitForPage()
+    {
+        IWait<IWebDriver> wait = new WebDriverWait(Browser.GetWebExecutionTool(), TimeSpan.FromSeconds(10));
+        wait.Until(driver1 => ((IJavaScriptExecutor)Browser.GetWebExecutionTool()).ExecuteScript("return document.readyState;").Equals("complete"));
     }
 }
