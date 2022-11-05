@@ -31,7 +31,7 @@ public class ShoppingCartPage : BasePage
     /// <returns></returns>
     public CheckoutPage CheckoutTheCart()
     {
-        VerifyUpdatedValueForProductQuantity("3");
+        VerifyUpdatedValueForProductQuantityIs("3");
 
         TermsAndServicesBox.Click();
         CheckoutButton.Click();
@@ -54,7 +54,12 @@ public class ShoppingCartPage : BasePage
         return new ShoppingCartPage(Browser);
     }
 
-    private ShoppingCartPage VerifyUpdatedValueForProductQuantity(string value)
+    /// <summary>
+    /// Verifies value for quantity is the same as the one updated in wish list page
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    private ShoppingCartPage VerifyUpdatedValueForProductQuantityIs(string value)
     {
         var quantityField = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.CssSelector("input[class='qty-input']"), 5000);
         quantityField.GetAttribute("value").Should().BeEquivalentTo(value);
