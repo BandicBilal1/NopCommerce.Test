@@ -18,14 +18,14 @@
  ### Prerequisites
 - IDE (Visual Studio / Visual Studio Code)
 - .NET SDK x64
-- Installed Scoop: <br />
+- Installed Scoop (for Windows): <br />
 In PWS execute following commands:
 ```shell
  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
  irm get.scoop.sh | iex
 ```
 - Installed Alure: <br />
-In PWS execute following commands:
+(Windows) In PWS execute following commands:
 ```shell
  scoop install allure
 ```
