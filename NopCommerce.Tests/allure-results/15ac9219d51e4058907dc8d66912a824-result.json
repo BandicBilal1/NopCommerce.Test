@@ -1,0 +1,67 @@
+{
+  "uuid": "c2822577-5a19-41d4-aa6e-e521ed612827-tr-0-1003",
+  "historyId": "NopCommerce.Tests.UITests.UserStory1.TC_01_AC1",
+  "fullName": "NopCommerce.Tests.UITests.UserStory1.TC_01_AC1",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "LAPTOP-EIN3UBE5"
+    },
+    {
+      "name": "package",
+      "value": "NopCommerce.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_01_AC1"
+    },
+    {
+      "name": "testClass",
+      "value": "UserStory1"
+    }
+  ],
+  "links": [],
+  "name": "TC_01_AC1",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Expected quantityField.GetAttribute(\"value\") to be equivalent to \"3\", but \"1\" differs near \"1\" (index 0).",
+    "trace": "   at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)\r\n   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)\r\n   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)\r\n   at FluentAssertions.Primitives.StringEqualityValidator.ValidateAgainstMismatch()\r\n   at FluentAssertions.Primitives.StringValidator.Validate()\r\n   at FluentAssertions.Primitives.StringAssertions`1.BeEquivalentTo(String expected, String because, Object[] becauseArgs)\r\n   at NopCommerce.UI.Frame.Pages.ShoppingCartPage.VerifyUpdatedValueForProductQuantityIs(String value) in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\ShoppingCartPage.cs:line 81\r\n   at NopCommerce.UI.Frame.Pages.ShoppingCartPage.CheckoutTheCart() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\ShoppingCartPage.cs:line 50\r\n   at NopCommerce.Tests.UITests.UserStory1.TC_01_AC1() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\UITests\\UserStory1.cs:line 12\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_01_AC1",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Expected quantityField.GetAttribute(\"value\") to be equivalent to \"3\", but \"1\" differs near \"1\" (index 0).",
+        "trace": "   at FluentAssertions.Execution.LateBoundTestFramework.Throw(String message)\r\n   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)\r\n   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)\r\n   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)\r\n   at FluentAssertions.Primitives.StringEqualityValidator.ValidateAgainstMismatch()\r\n   at FluentAssertions.Primitives.StringValidator.Validate()\r\n   at FluentAssertions.Primitives.StringAssertions`1.BeEquivalentTo(String expected, String because, Object[] becauseArgs)\r\n   at NopCommerce.UI.Frame.Pages.ShoppingCartPage.VerifyUpdatedValueForProductQuantityIs(String value) in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\ShoppingCartPage.cs:line 81\r\n   at NopCommerce.UI.Frame.Pages.ShoppingCartPage.CheckoutTheCart() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\ShoppingCartPage.cs:line 50\r\n   at NopCommerce.Tests.UITests.UserStory1.TC_01_AC1() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\UITests\\UserStory1.cs:line 12\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "7ec555f0312b4a9fb896101c475ceb2d-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667667856726,
+      "stop": 1667667868504
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667667856726,
+  "stop": 1667667868507
+}

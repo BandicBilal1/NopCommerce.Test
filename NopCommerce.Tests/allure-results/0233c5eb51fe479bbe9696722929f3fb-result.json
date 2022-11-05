@@ -1,0 +1,64 @@
+{
+  "uuid": "95a69847-5f88-4e55-8135-aef4e8c05e43-tr-0-1008",
+  "historyId": "NopCommerce.Tests.APITests.UserStory2.TC_04_AC2_GetUserById_ValidateResponse_200",
+  "fullName": "NopCommerce.Tests.APITests.UserStory2.TC_04_AC2_GetUserById_ValidateResponse_200",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#11"
+    },
+    {
+      "name": "host",
+      "value": "LAPTOP-EIN3UBE5"
+    },
+    {
+      "name": "package",
+      "value": "NopCommerce.Tests.APITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_04_AC2_GetUserById_ValidateResponse_200"
+    },
+    {
+      "name": "testClass",
+      "value": "UserStory2"
+    }
+  ],
+  "links": [],
+  "name": "TC_04_AC2_GetUserById_ValidateResponse_200",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "TC_04_AC2_GetUserById_ValidateResponse_200"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_04_AC2_GetUserById_ValidateResponse_200",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "bf9a083eeb064b2ebd2c4f15a50ca03c-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667667870131,
+      "stop": 1667667871006
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667667870131,
+  "stop": 1667667871006
+}

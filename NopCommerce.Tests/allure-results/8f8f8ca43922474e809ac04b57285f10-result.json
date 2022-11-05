@@ -1,0 +1,67 @@
+{
+  "uuid": "dce36164-5d29-4139-b878-c53b52fcbd2f-tr-0-1010",
+  "historyId": "NopCommerce.Tests.APITests.UserStory2.TC_05_AC2_GetDeletedUserById_ValidateResponse_404",
+  "fullName": "NopCommerce.Tests.APITests.UserStory2.TC_05_AC2_GetDeletedUserById_ValidateResponse_404",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#6"
+    },
+    {
+      "name": "host",
+      "value": "LAPTOP-EIN3UBE5"
+    },
+    {
+      "name": "package",
+      "value": "NopCommerce.Tests.APITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_05_AC2_GetDeletedUserById_ValidateResponse_404"
+    },
+    {
+      "name": "testClass",
+      "value": "UserStory2"
+    }
+  ],
+  "links": [],
+  "name": "TC_05_AC2_GetDeletedUserById_ValidateResponse_404",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: Accepted\r\n  But was:  MethodNotAllowed\r\n",
+    "trace": "   at NopCommerce.API.Models.Api.Users.UsersApiClient.ValidateDeleteUserByIdAcceptedResponse() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.API\\Models\\Api\\Users\\UsersApiClient.cs:line 145\r\n   at NopCommerce.API.Models.Api.Users.UsersApiClient.SendGetDeletedUserByIdAndValidateResponse() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.API\\Models\\Api\\Users\\UsersApiClient.cs:line 234\r\n   at NopCommerce.Tests.APITests.UserStory2.TC_05_AC2_GetDeletedUserById_ValidateResponse_404() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\APITests\\UserStory2.cs:line 50\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_05_AC2_GetDeletedUserById_ValidateResponse_404",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: Accepted\r\n  But was:  MethodNotAllowed\r\n",
+        "trace": "   at NopCommerce.API.Models.Api.Users.UsersApiClient.ValidateDeleteUserByIdAcceptedResponse() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.API\\Models\\Api\\Users\\UsersApiClient.cs:line 145\r\n   at NopCommerce.API.Models.Api.Users.UsersApiClient.SendGetDeletedUserByIdAndValidateResponse() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.API\\Models\\Api\\Users\\UsersApiClient.cs:line 234\r\n   at NopCommerce.Tests.APITests.UserStory2.TC_05_AC2_GetDeletedUserById_ValidateResponse_404() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\APITests\\UserStory2.cs:line 50\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "468dc823f4cf443f96950a04ae298d22-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667667838967,
+      "stop": 1667667840109
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667667838967,
+  "stop": 1667667840109
+}

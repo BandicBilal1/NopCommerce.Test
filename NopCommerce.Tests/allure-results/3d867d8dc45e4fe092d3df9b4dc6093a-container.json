@@ -1,0 +1,44 @@
+{
+  "uuid": "a1f8f99e-7591-4a36-b2ae-52cb50a5c975-tc-0-1004",
+  "name": "NopCommerce.Tests.APITests.UserStory2.TC_04_AC2_GetUserById_ValidateResponse_200",
+  "children": [
+    "95a69847-5f88-4e55-8135-aef4e8c05e43-tr-0-1008"
+  ],
+  "befores": [
+    {
+      "name": "Setup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1667667871004,
+      "stop": 1667667871004
+    }
+  ],
+  "afters": [
+    {
+      "name": "TestTearDown",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1667667871004,
+      "stop": 1667667871004
+    }
+  ],
+  "links": [],
+  "start": 1667667870131,
+  "stop": 1667667871018
+}

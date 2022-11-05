@@ -1,0 +1,64 @@
+{
+  "uuid": "00e85de0-ddec-4450-ab73-1d35c558a9b8-tr-0-1005",
+  "historyId": "NopCommerce.Tests.APITests.UserStory2.TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401",
+  "fullName": "NopCommerce.Tests.APITests.UserStory2.TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#6"
+    },
+    {
+      "name": "host",
+      "value": "LAPTOP-EIN3UBE5"
+    },
+    {
+      "name": "package",
+      "value": "NopCommerce.Tests.APITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401"
+    },
+    {
+      "name": "testClass",
+      "value": "UserStory2"
+    }
+  ],
+  "links": [],
+  "name": "TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_01_AC1_UnregisteredUserCannotGetAllUsers_ValidateResponse_401",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "d6e95e22cb494217abddef954c4f3afd-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667667835016,
+      "stop": 1667667835598
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667667835016,
+  "stop": 1667667835600
+}

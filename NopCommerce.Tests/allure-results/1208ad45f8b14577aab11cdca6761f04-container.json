@@ -1,0 +1,44 @@
+{
+  "uuid": "e82de854-f72c-4ae9-b97e-8db9fce8882c-tc-0-1004",
+  "name": "NopCommerce.Tests.APITests.UserStory2.TC_02_AC2_UserCanLogin_ValidateResponse_200",
+  "children": [
+    "8d84eb04-5e0c-435e-b394-d94dc72ccae5-tr-0-1006"
+  ],
+  "befores": [
+    {
+      "name": "Setup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1667667836029,
+      "stop": 1667667836029
+    }
+  ],
+  "afters": [
+    {
+      "name": "TestTearDown",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1667667836029,
+      "stop": 1667667836029
+    }
+  ],
+  "links": [],
+  "start": 1667667835629,
+  "stop": 1667667836032
+}
