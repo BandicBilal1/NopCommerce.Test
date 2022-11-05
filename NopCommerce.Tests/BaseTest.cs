@@ -6,10 +6,8 @@ using NopCommerce.UI.Frame;
 namespace NopCommerce.Tests;
 
 [TestFixture]
-[Parallelizable]
 public class BaseTest
 {
-    protected UsersApi UsersApi;
     private readonly WebExecutionTool _executionTool;
     protected NopCommerceNavigator Navigator;
     private BasePage _basePage;
@@ -24,7 +22,6 @@ public class BaseTest
     [SetUp]
     public void Setup()
     {
-        UsersApi = new UsersApi();
         _executionTool.StartApplication();
     }
 

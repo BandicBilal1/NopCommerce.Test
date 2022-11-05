@@ -8,7 +8,7 @@ using NUnit.Framework;
 using RestSharp;
 
 namespace NopCommerce.API.Models.Api.Users;
-public class Users
+public class UsersApiClient
 {
     private string Token { get; set; }
     private string CreatedUserId { get; set; }
