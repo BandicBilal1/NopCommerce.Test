@@ -19,7 +19,7 @@ public class WishListPage : BasePage
 
     public WishListPage(WebExecutionTool executionTool) : base(executionTool)
     {
-        this.VerifyWishListPageIsDisplayed();
+        
     }
 
     #endregion

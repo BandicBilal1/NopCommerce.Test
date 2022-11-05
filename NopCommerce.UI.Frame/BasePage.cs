@@ -12,7 +12,8 @@ public class BasePage
     public  BasePage(WebExecutionTool executionTool)
     {
         this.Browser = executionTool;
-        this.WaitForPage();
+        //this.WaitForPage();
+        Thread.Sleep(2000);
     }
 
     /// <summary>

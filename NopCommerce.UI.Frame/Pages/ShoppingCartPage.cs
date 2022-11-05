@@ -18,7 +18,7 @@ public class ShoppingCartPage : BasePage
 
     public ShoppingCartPage(WebExecutionTool executionTool) : base(executionTool)
     {
-        this.VerifyShoppingCartPageIsDisplayed();
+        
     }
 
     #endregion
@@ -31,6 +31,8 @@ public class ShoppingCartPage : BasePage
     /// <returns></returns>
     public CheckoutPage CheckoutTheCart()
     {
+        VerifyUpdatedValueForProductQuantity("3");
+
         TermsAndServicesBox.Click();
         CheckoutButton.Click();
 
@@ -48,6 +50,14 @@ public class ShoppingCartPage : BasePage
     private ShoppingCartPage VerifyShoppingCartPageIsDisplayed()
     {
         ShoppingCartPageTitle.Exists(5).Should().BeTrue();
+
+        return new ShoppingCartPage(Browser);
+    }
+
+    private ShoppingCartPage VerifyUpdatedValueForProductQuantity(string value)
+    {
+        var quantityField = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.CssSelector("input[class='qty-input']"), 5000);
+        quantityField.GetAttribute("value").Should().BeEquivalentTo(value);
 
         return new ShoppingCartPage(Browser);
     }

@@ -26,7 +26,7 @@ public class CheckoutPage : BasePage
 
     public CheckoutPage(WebExecutionTool executionTool) : base(executionTool)
     {
-        this.VerifyCheckoutPageIsDisplayed();
+
     }
 
     #endregion
