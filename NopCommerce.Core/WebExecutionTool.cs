@@ -98,6 +98,8 @@ public sealed class WebExecutionTool : IExecutionTool
             case DriverType.Chrome:
                 ChromeOptions driverOptions = new ChromeOptions();
                 driverOptions.AddArguments("start-maximized");
+                if (Environment.GetEnvironmentVariable("HEADLESS") != null)
+                    driverOptions.AddArguments("--headless");
                 _webDriver = new ChromeDriver((ChromeOptions)driverOptions);
                 break;
             case DriverType.Edge:

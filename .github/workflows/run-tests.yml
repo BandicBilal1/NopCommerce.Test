@@ -1,4 +1,6 @@
 name: Run tests
+env:
+  HEADLESS: true
 on: 
   workflow_dispatch:
 

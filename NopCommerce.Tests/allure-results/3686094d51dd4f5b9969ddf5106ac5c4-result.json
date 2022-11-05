@@ -1,0 +1,67 @@
+{
+  "uuid": "0b67bf12-b97c-4901-b624-3d3e87b29d2e-tr-0-1003",
+  "historyId": "NopCommerce.Tests.UITests.UserStory1.TC_01_AC1",
+  "fullName": "NopCommerce.Tests.UITests.UserStory1.TC_01_AC1",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "LAPTOP-EIN3UBE5"
+    },
+    {
+      "name": "package",
+      "value": "NopCommerce.Tests.UITests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_01_AC1"
+    },
+    {
+      "name": "testClass",
+      "value": "UserStory1"
+    }
+  ],
+  "links": [],
+  "name": "TC_01_AC1",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.ElementNotInteractableException : element not interactable\n  (Session info: headless chrome=107.0.5304.88)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at NopCommerce.Core.Elements.Button.Click() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Core\\Elements\\Button.cs:line 24\r\n   at Pages.HomePage.NavigateToTheGiftCardsPage() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\HomePage.cs:line 59\r\n   at NopCommerce.Tests.UITests.UserStory1.TC_01_AC1() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\UITests\\UserStory1.cs:line 12"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_01_AC1",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.ElementNotInteractableException : element not interactable\n  (Session info: headless chrome=107.0.5304.88)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at NopCommerce.Core.Elements.Button.Click() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Core\\Elements\\Button.cs:line 24\r\n   at Pages.HomePage.NavigateToTheGiftCardsPage() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.UI.Frame\\Pages\\HomePage.cs:line 59\r\n   at NopCommerce.Tests.UITests.UserStory1.TC_01_AC1() in C:\\Users\\38761\\source\\repos\\NopCommerce.Test\\NopCommerce.Tests\\UITests\\UserStory1.cs:line 12"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "545413cf9b174fef8e4d1ed7ecdff511-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667681959977,
+      "stop": 1667681971767
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667681959976,
+  "stop": 1667681971774
+}
