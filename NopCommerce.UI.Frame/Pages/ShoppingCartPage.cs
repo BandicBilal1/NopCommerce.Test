@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace NopCommerce.UI.Frame.Pages;
@@ -23,6 +24,21 @@ public class ShoppingCartPage : BasePage
 
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public ShoppingCartPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new ShoppingCartPage(Browser);
+    }
+
+    #endregion
+
     #region Actions
 
     /// <summary>
@@ -36,7 +52,7 @@ public class ShoppingCartPage : BasePage
         TermsAndServicesBox.Click();
         CheckoutButton.Click();
 
-        return new CheckoutPage(Browser);
+        return new CheckoutPage(Browser).WaitForPage();
     }
 
     #endregion
@@ -64,7 +80,7 @@ public class ShoppingCartPage : BasePage
         var quantityField = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.CssSelector("input[class='qty-input']"), 5000);
         quantityField.GetAttribute("value").Should().BeEquivalentTo(value);
 
-        return new ShoppingCartPage(Browser);
+        return new ShoppingCartPage(Browser).WaitForPage();
     }
 
     #endregion

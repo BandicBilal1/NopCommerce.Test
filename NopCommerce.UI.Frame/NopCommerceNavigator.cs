@@ -18,6 +18,6 @@ public class NopCommerceNavigator : BasePage, INavigator
     {
         Browser.GoTo(StaticUrls.HomePageUrl);
 
-        return new HomePage(Browser);
+        return new HomePage(Browser).WaitForPage();
     }
 }

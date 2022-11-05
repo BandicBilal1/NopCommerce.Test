@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace NopCommerce.UI.Frame.Pages;
@@ -24,6 +25,21 @@ public class WishListPage : BasePage
 
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public WishListPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new WishListPage(Browser);
+    }
+
+    #endregion
+
     #region Actions
 
     /// <summary>
@@ -36,7 +52,7 @@ public class WishListPage : BasePage
         QuantityField.ClearValue();
         QuantityField.Write(value);
 
-        return new WishListPage(Browser);
+        return new WishListPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -48,7 +64,7 @@ public class WishListPage : BasePage
         AddToCartBox.Click();
         AddToCartButton.Click();
 
-        return new ShoppingCartPage(Browser);
+        return new ShoppingCartPage(Browser).WaitForPage();
     }
 
     #endregion

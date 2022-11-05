@@ -2,6 +2,7 @@
 using NopCommerce.API.Helpers;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using NopCommerce.Core.Interfaces;
 using OpenQA.Selenium;
 using Pages;
@@ -28,6 +29,21 @@ public class RegisterPage : BasePage
 
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public RegisterPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new RegisterPage(Browser);
+    }
+
+    #endregion
+
     #region Actions
 
     /// <summary>
@@ -40,7 +56,7 @@ public class RegisterPage : BasePage
         ClickOnTheRegisterButton();
         VerifyThatUserIsRegistered();
 
-        return new HomePage(Browser);
+        return new HomePage(Browser).WaitForPage();
     }
     
     /// <summary>
@@ -56,7 +72,7 @@ public class RegisterPage : BasePage
         PasswordTextField.Write("Capri0123.");
         ConfirmPasswordTextField.Write("Capri0123.");
 
-        return new RegisterPage(Browser);
+        return new RegisterPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -84,7 +100,7 @@ public class RegisterPage : BasePage
         var continueButton = WebExecutionTool.FindElement(Browser.GetWebExecutionTool(), By.XPath("//a[text()='Continue']"), 5000);
         continueButton.Click();
 
-        return new HomePage(Browser);
+        return new HomePage(Browser).WaitForPage();
     }
 
     #endregion

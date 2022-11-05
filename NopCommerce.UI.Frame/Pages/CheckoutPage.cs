@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -27,6 +28,21 @@ public class CheckoutPage : BasePage
     public CheckoutPage(WebExecutionTool executionTool) : base(executionTool)
     {
 
+    }
+
+    #endregion
+
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public CheckoutPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new CheckoutPage(Browser);
     }
 
     #endregion
@@ -62,7 +78,7 @@ public class CheckoutPage : BasePage
         ZipPostalCodeTextField.Write("71240");
         PhoneNumberTextField.Write("062889912");
 
-        return new CheckoutPage(Browser);
+        return new CheckoutPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -73,7 +89,7 @@ public class CheckoutPage : BasePage
     {
         PaymentMethodRadioButton.SelectValue("Payments.CheckMoneyOrder");
 
-        return new CheckoutPage(Browser);
+        return new CheckoutPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -83,7 +99,7 @@ public class CheckoutPage : BasePage
     private CheckoutPage ProceedToNextStep()
     {
         ContinueButton.Click();
-        return new CheckoutPage(Browser);
+        return new CheckoutPage(Browser).WaitForPage();
     }
 
     #endregion
@@ -109,7 +125,7 @@ public class CheckoutPage : BasePage
     {
         ConfirmedOrderTitle.Read().Contains("Your order has been successfully processed!");
 
-        return new CheckoutPage(Browser);
+        return new CheckoutPage(Browser).WaitForPage();
     }
 
     #endregion

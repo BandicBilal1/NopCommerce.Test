@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 using Pages;
 
@@ -21,6 +22,21 @@ public class GiftCardsPage : BasePage
 
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public GiftCardsPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new GiftCardsPage(Browser);
+    }
+
+    #endregion
+
     /// <summary>
     /// Navigate user to the Wish list form of the gift card
     /// </summary>
@@ -29,7 +45,7 @@ public class GiftCardsPage : BasePage
     {
         AddToWishListButton.Click();
 
-        return new GiftCardPage(Browser);
+        return new GiftCardPage(Browser).WaitForPage();
     }
 
     #region Actions

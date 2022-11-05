@@ -3,6 +3,7 @@ using NopCommerce.Core;
 using NopCommerce.Core.Elements;
 using NopCommerce.UI.Frame;
 using NopCommerce.UI.Frame.Pages;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace Pages;
@@ -21,6 +22,21 @@ public class HomePage : BasePage
     }
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public HomePage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new HomePage(Browser);
+    }
+
+    #endregion
+
     #region Actions
 
     /// <summary>
@@ -31,7 +47,7 @@ public class HomePage : BasePage
     {
         RegisterLink.Click();
 
-        return new RegisterPage(Browser);
+        return new RegisterPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -42,7 +58,7 @@ public class HomePage : BasePage
     {
         GiftCardsLink.Click();
 
-        return new GiftCardsPage(Browser);
+        return new GiftCardsPage(Browser).WaitForPage();
     }
 
     #endregion

@@ -13,16 +13,7 @@ public class BasePage
     {
         this.Browser = executionTool;
         //this.WaitForPage();
-        Thread.Sleep(2000);
+        //Thread.Sleep(2000);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    private void WaitForPage()
-    {
-        IWait<IWebDriver> wait = new WebDriverWait(Browser.GetWebExecutionTool(), TimeSpan.FromSeconds(10));
-        wait.Until(driver1 => ((IJavaScriptExecutor)Browser.GetWebExecutionTool()).ExecuteScript("return document.readyState;").Equals("complete"));
-    }
 }

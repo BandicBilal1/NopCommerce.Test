@@ -1,5 +1,6 @@
 ﻿using NopCommerce.Core;
 using NopCommerce.Core.Elements;
+using NopCommerce.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace NopCommerce.UI.Frame.Pages;
@@ -25,6 +26,21 @@ public class GiftCardPage : BasePage
 
     #endregion
 
+    #region General
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public GiftCardPage WaitForPage()
+    {
+        Extensions.WaitForPageToLoad();
+
+        return new GiftCardPage(Browser);
+    }
+
+    #endregion
+
     #region Actions
 
     /// <summary>
@@ -36,7 +52,7 @@ public class GiftCardPage : BasePage
         FillInGiftCardRequiredFields();
         GiftCardsPage.ClickOnWishListButtonForItem();
 
-        return new GiftCardPage(Browser);
+        return new GiftCardPage(Browser).WaitForPage();
     }
 
     /// <summary>
@@ -57,7 +73,7 @@ public class GiftCardPage : BasePage
     {
         WishListLink.Click();
 
-        return new WishListPage(Browser);
+        return new WishListPage(Browser).WaitForPage();
     }
 
     #endregion
