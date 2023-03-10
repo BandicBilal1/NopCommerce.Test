@@ -1,34 +1,27 @@
-# NopCommerce.Test
+# xe currency converter testing
 
- Basic Test Automation Framework project for UI and API purposes of testing.<br />
- <br />
+ Test Automation Framework project for the UI and API testing 
+
  Following stack used:
  - Dotnet 6.0
  - NUnit 3.13.3
- - Selenium 4.5.1
- - RestSharp 108.0.2
- - NUnit.Allure 1.2.1.1
- <br />
- Page objects built on example website: https://demo.nopcommerce.com/<br />
- Api Test Automation Framewwork built on example API documentation: <br />
- https://www.appsloveworld.com/sample-rest-api-url-for-testing-with-authentication.
+ - Selenium 4.8.1
+
+ Testing done for the: https://www.xe.com/currencyconverter
+ 
+ Provided test cases are testing user story:
+As a User I should be able to perform forex conversions in a converter widget.
+ 
+ You can find here documented test cases. 
+ 
  
  ## Installing / Getting started
 
  ### Prerequisites
 - IDE (Visual Studio / Visual Studio Code)
 - .NET SDK x64
-- Installed Scoop (for Windows): <br />
-In PWS execute following commands:
-```shell
- Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
- irm get.scoop.sh | iex
-```
-- Installed Alure: <br />
-(Windows) In PWS execute following commands:
-```shell
- scoop install allure
-```
+- Selenium WebDriver 4.8.1
+- ChromeDriver 111.0
 
 ### Hands on
 - Clone the project locally in directory by choice
@@ -42,6 +35,12 @@ dotnet build
 dotnet restore
 dotnet clean
 ```
+### add  NuGet packages 
+Packages names: FluentAssertions, Microsoft.NET.Test.Sdk, NUnit, NUnit, NUnit3TestAdapter, Selenium.WebDriver, Selenium.WebDriver.ChromeDriver 
+```Shell
+dotnet add package <PACKAGE_NAME>
+```
+
 - Run all tests:
 ```Shell
 dotnet test
@@ -50,19 +49,3 @@ dotnet test
 ```Shell
 dotnet test --filter <test_name>
 ```
- 
- ### Generate Allure report
- - Open PowerShell
- - Generate report:
-```shell
-allure generate "allure-results-directory" --clean
-```
-- Open the report:
-```shell
-allure open "allure-report-directory"
-```
-
-### GitHub Actions / CI
-- Go to Actions
-- Click on Run tests
-- Trigger workflow
